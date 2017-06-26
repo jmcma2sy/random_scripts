@@ -1,0 +1,18 @@
+#!/bin/bash
+
+#quick and dirty batch normalizes filenames
+#jmcmahon 2017
+
+echo "Filename Normalizer"
+sleep 1
+read -p "Edit me to normalize files. Press enter to continue."
+
+#print path to directory where the files are here, then uncomment
+
+#cd /Users/jmcmahon/Desktop/test_files
+
+#Note this is looking for PDF files, change extension below to change file type
+
+for files in *.pdf; do mv "$files" "${files/*_/}"; done
+ls -l
+echo "Rename complete."
